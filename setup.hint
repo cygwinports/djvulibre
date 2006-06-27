@@ -1,0 +1,6 @@
+category: Text
+requires: cygwin libdjvulibre15 libtiff5 
+sdesc: "DjVu document package (utilities)"
+ldesc: "DjVu (pronounced 'deja vu') a set of compression technologies, a
+file format, and a software platform for the delivery over the Web of
+digital documents, scanned documents, and high resolution images."
