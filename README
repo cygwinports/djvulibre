@@ -5,55 +5,57 @@ format, and a software platform for the delivery over the Web of digital
 documents, scanned documents, and high resolution images.
 
 Runtime requirements:
-  cygwin-1.5.20-1
-  libjpeg62-6b-11
-  libtiff5-3.7.3-1
+  cygwin-1.5.24-2
+  libjpeg62-6b-12
+  libtiff5-3.8.3-2
 
 The djview GUI package also requires:
-  libX11_6-1.0.0-2
-  libXext6-1.0.0-1
-  libXt6-1.0.0-1
-  qt3-3.3.6-1
+  libX11_6-1.1.1-1
+  libXext6-1.0.2-1
+  libXt6-1.0.4-1
+  qt3-3.3.7-1
+  xdg-utils-1.0.1-1
 
 Build requirements:
 (besides corresponding devel packages)
-  cygwin-1.5.20-1
-  autoconf2.5-2.59-2
-  binutils-20050610-1
-  cygport-0.1.6-1
-  gawk-3.1.5-2
-  gcc-core-3.4.4-1
-  gcc-g++-3.4.4-1
-  libtool1.5-1.5.22-1
-  make-3.80-1
-  sed-4.1.4-1
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  binutils-20050817-1
+  cygport-0.1.9-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  gcc-g++-3.4.4-3
+  libtool1.5-1.5.23a-2
+  make-3.81-1
+  sed-4.1.5-2
 
 Canonical homepage:
   http://djvulibre.djvuzone.org/
 
 Canonical download:
-  http://prdownloads.sourceforge.net/djvu/
+  http://downloads.sourceforge.net/djvu/
 
 -------------------------------------------
 
 Build instructions:
-  unpack djvulibre-3.5.17-X-src.tar.bz2
+  unpack djvulibre-3.5.18-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./djvulibre-3.5.17-X.cygport all
+  cygport ./djvulibre-3.5.18-X.cygport all
 
 This will create:
-  /usr/src/djvulibre-3.5.17-X-src.tar.bz2
-  /usr/src/djvulibre-3.5.17-X.tar.bz2
-  /usr/src/djvulibre-devel-3.5.17-X.tar.bz2
-  /usr/src/djview-3.5.17-X.tar.bz2
-  /usr/src/libdjvulibre15-3.5.17-X.tar.bz2
+  /usr/src/djvulibre-3.5.18-X-src.tar.bz2
+  /usr/src/djvulibre-3.5.18-X.tar.bz2
+  /usr/src/djview-3.5.18-X.tar.bz2
+  /usr/src/libdjvulibre-devel-3.5.18-X.tar.bz2
+  /usr/src/libdjvulibre15-3.5.18-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary package:
+Files included in the binary packages:
 
+(djvulibre)
   /usr/bin/any2djvu
   /usr/bin/bzz.exe
   /usr/bin/c44.exe
@@ -73,7 +75,6 @@ Files included in the binary package:
   /usr/bin/djvutoxml.exe
   /usr/bin/djvutxt.exe
   /usr/bin/djvuxmlparser.exe
-  /usr/share/djvu/languages.xml
   /usr/share/djvu/osi/de/libdjvu++.xml
   /usr/share/djvu/osi/de/messages.xml
   /usr/share/djvu/osi/en/djvutools-reference.xml
@@ -85,18 +86,19 @@ Files included in the binary package:
   /usr/share/djvu/osi/fr/messages.xml
   /usr/share/djvu/osi/ja/libdjvu++.xml
   /usr/share/djvu/osi/ja/messages.xml
+  /usr/share/djvu/osi/languages.xml
   /usr/share/djvu/osi/zh/libdjvu++.xml
   /usr/share/djvu/osi/zh/messages.xml
   /usr/share/djvu/pubtext/DjVuMessages.dtd
   /usr/share/djvu/pubtext/DjVuOCR.dtd
   /usr/share/djvu/pubtext/DjVuXML-s.dtd
-  /usr/share/doc/Cygwin/djvulibre-3.5.17.README
-  /usr/share/doc/djvulibre-3.5.17/COPYING
-  /usr/share/doc/djvulibre-3.5.17/COPYRIGHT
-  /usr/share/doc/djvulibre-3.5.17/INSTALL
-  /usr/share/doc/djvulibre-3.5.17/NEWS
-  /usr/share/doc/djvulibre-3.5.17/README
-  /usr/share/doc/djvulibre-3.5.17/TODO
+  /usr/share/doc/Cygwin/djvulibre-3.5.18.README
+  /usr/share/doc/djvulibre-3.5.18/COPYING
+  /usr/share/doc/djvulibre-3.5.18/COPYRIGHT
+  /usr/share/doc/djvulibre-3.5.18/INSTALL
+  /usr/share/doc/djvulibre-3.5.18/NEWS
+  /usr/share/doc/djvulibre-3.5.18/README
+  /usr/share/doc/djvulibre-3.5.18/TODO
   /usr/share/man/ja/man1/bzz.1.gz
   /usr/share/man/ja/man1/c44.1.gz
   /usr/share/man/ja/man1/cjb2.1.gz
@@ -134,50 +136,48 @@ Files included in the binary package:
   /usr/share/man/man1/djvutxt.1.gz
   /usr/share/man/man1/djvuxmlparser.1.gz
 
-Files included in the runtime library package:
-
+(libdjvulibre15)
   /usr/bin/cygdjvulibre-15.dll
 
-Files included in the devel package:
-
+(libdjvulibre-devel)
   /usr/include/libdjvu/ddjvuapi.h
   /usr/include/libdjvu/miniexp.h
   /usr/lib/libdjvulibre.dll.a
   /usr/lib/libdjvulibre.la
   /usr/lib/pkgconfig/ddjvuapi.pc
 
-Files included in the djview (Qt client) package:
-
+(djview3)
   /etc/postinstall/djvulibre.sh
-  /usr/bin/djview.exe
+  /usr/bin/djview3.exe
   /usr/lib/netscape/plugins/nsdejavu.dll
-  /usr/share/application-registry/djvu.applications
-  /usr/share/applications/djview.desktop
-  /usr/share/djvu/osi/de/djview.qm
-  /usr/share/djvu/osi/de/qt.qm
-  /usr/share/djvu/osi/fr/djview.qm
-  /usr/share/djvu/osi/fr/qt.qm
-  /usr/share/djvu/osi/ja/djview.qm
-  /usr/share/djvu/osi/ja/qt.qm
-  /usr/share/icons/hicolor/22x22/mimetypes/djvu.png
-  /usr/share/icons/hicolor/32x32/mimetypes/djvu.png
-  /usr/share/icons/hicolor/48x48/mimetypes/djvu.png
-  /usr/share/man/ja/man1/djview.1.gz
+  /usr/share/djvu/djview3/de/djview.qm
+  /usr/share/djvu/djview3/de/qt.qm
+  /usr/share/djvu/djview3/desktop/djvulibre-djview3.desktop
+  /usr/share/djvu/djview3/desktop/hi32-djview3.png
+  /usr/share/djvu/djview3/desktop/register-djview-menu
+  /usr/share/djvu/djview3/fr/djview.qm
+  /usr/share/djvu/djview3/fr/qt.qm
+  /usr/share/djvu/djview3/ja/djview.qm
+  /usr/share/djvu/djview3/ja/qt.qm
+  /usr/share/djvu/osi/desktop/djvulibre-mime.xml
+  /usr/share/djvu/osi/desktop/hi22-djvu.png
+  /usr/share/djvu/osi/desktop/hi32-djvu.png
+  /usr/share/djvu/osi/desktop/hi48-djvu.png
+  /usr/share/djvu/osi/desktop/register-djvu-mime
+  /usr/share/man/ja/man1/djview3.1.gz
   /usr/share/man/ja/man1/nsdejavu.1.gz
-  /usr/share/man/man1/djview.1.gz
+  /usr/share/man/man1/djview3.1.gz
   /usr/share/man/man1/nsdejavu.1.gz
-  /usr/share/mime-info/djvu.keys
-  /usr/share/mime-info/djvu.mime
-  /usr/share/mimelnk/image/x-djvu.desktop
-  /usr/share/pixmaps/djvu.png
 
 ------------------
 
 Port Notes:
 
+----- version 3.5.18-1 -----
+Version bump.
+
 ----- version 3.5.17-1 -----
 Initial release for Cygwin.
-
 
 
 Cygwin port maintained by:
