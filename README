@@ -7,7 +7,7 @@ documents, scanned documents, and high resolution images.
 Runtime requirements:
   cygwin-1.5.24-2
   libjpeg62-6b-12
-  libtiff5-3.8.3-2
+  libtiff5-3.8.2-3
 
 The djview GUI package also requires:
   libX11_6-1.1.1-1
@@ -21,7 +21,7 @@ Build requirements:
   cygwin-1.5.24-2
   autoconf2.5-2.61-1
   binutils-20050817-1
-  cygport-0.1.9-1
+  cygport-0.3.1-1
   gawk-3.1.5-4
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
@@ -38,18 +38,18 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack djvulibre-3.5.18-X-src.tar.bz2
+  unpack djvulibre-3.5.19-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./djvulibre-3.5.18-X.cygport all
+  cygport ./djvulibre-3.5.19-X.cygport all
 
 This will create:
-  /usr/src/djvulibre-3.5.18-X-src.tar.bz2
-  /usr/src/djvulibre-3.5.18-X.tar.bz2
-  /usr/src/djview-3.5.18-X.tar.bz2
-  /usr/src/libdjvulibre-devel-3.5.18-X.tar.bz2
-  /usr/src/libdjvulibre15-3.5.18-X.tar.bz2
+  /usr/src/djvulibre-3.5.19-X-src.tar.bz2
+  /usr/src/djvulibre-3.5.19-X.tar.bz2
+  /usr/src/djview-3.5.19-X.tar.bz2
+  /usr/src/libdjvulibre-devel-3.5.19-X.tar.bz2
+  /usr/src/libdjvulibre15-3.5.19-X.tar.bz2
 
 -------------------------------------------
 
@@ -92,13 +92,13 @@ Files included in the binary packages:
   /usr/share/djvu/pubtext/DjVuMessages.dtd
   /usr/share/djvu/pubtext/DjVuOCR.dtd
   /usr/share/djvu/pubtext/DjVuXML-s.dtd
-  /usr/share/doc/Cygwin/djvulibre-3.5.18.README
-  /usr/share/doc/djvulibre-3.5.18/COPYING
-  /usr/share/doc/djvulibre-3.5.18/COPYRIGHT
-  /usr/share/doc/djvulibre-3.5.18/INSTALL
-  /usr/share/doc/djvulibre-3.5.18/NEWS
-  /usr/share/doc/djvulibre-3.5.18/README
-  /usr/share/doc/djvulibre-3.5.18/TODO
+  /usr/share/doc/Cygwin/djvulibre-3.5.19.README
+  /usr/share/doc/djvulibre-3.5.19/COPYING
+  /usr/share/doc/djvulibre-3.5.19/COPYRIGHT
+  /usr/share/doc/djvulibre-3.5.19/INSTALL
+  /usr/share/doc/djvulibre-3.5.19/NEWS
+  /usr/share/doc/djvulibre-3.5.19/README
+  /usr/share/doc/djvulibre-3.5.19/TODO
   /usr/share/man/ja/man1/bzz.1.gz
   /usr/share/man/ja/man1/c44.1.gz
   /usr/share/man/ja/man1/cjb2.1.gz
@@ -172,6 +172,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 3.5.19-1 -----
+Version bump.
 
 ----- version 3.5.18-1 -----
 Version bump.
