@@ -1,0 +1,48 @@
+DESCRIPTION="DjVu document library, viewer, and browser plugin"
+HOMEPAGE="http://djvulibre.djvuzone.org/"
+SRC_URI="mirror://sourceforge/djvu/${P}-5.tar.gz"
+
+abi=15
+PKG_NAMES="${PN} lib${PN}${abi} lib${PN}-devel djview3"
+PKG_HINTS="setup runtime devel gui"
+PKG_CONTENTS[0]="--exclude=*.dll --exclude=djview* --exclude=nsdejavu* \
+                 --exclude=desktop \
+                 usr/bin/ usr/share/djvu/ usr/share/doc/ usr/share/man/"
+PKG_CONTENTS[1]="usr/bin/*-${abi}.dll"
+PKG_CONTENTS[2]='usr/include/ usr/lib/lib* usr/lib/pkgconfig/'
+PKG_CONTENTS[3]="etc/ usr/bin/djview3.exe usr/lib/mozilla/ \
+                 usr/share/djvu/djview3/ usr/share/djvu/osi/desktop/ \
+                 usr/share/man/ja/man1/djview3.* usr/share/man/ja/man1/nsdejavu.* \
+                 usr/share/man/man1/djview3.* usr/share/man/man1/nsdejavu.*"
+
+src_compile() {
+	cd ${S}
+
+	local lt_m4
+	local lt_macros="libtool.m4"
+	local lt_v=$(libtoolize --version | head -n 1 | cut -d ' ' -f 4)
+
+	case ${lt_v} in
+	1.5.*)  ;;
+	2.2.*)  lt_macros+=" ltoptions.m4 ltsugar.m4 ltversion.m4 lt~obsolete.m4" ;;
+	*)  error "unsupported libtool version: ${lt_v}" ;;
+	esac
+
+	rm -f config/libtool.m4
+	for lt_m4 in ${lt_macros}
+	do
+	cat /usr/share/aclocal/${lt_m4} >> config/libtool.m4
+	done
+
+	cygautoreconf
+
+	cd ${B}
+	cygconf \
+		--enable-xmltools \
+		--with-jpeg \
+		--with-tiff \
+		--with-qt=/usr/lib/qt3 \
+		--enable-threads=pthread
+	cygmake -j1 -C i18n
+	cygmake
+}

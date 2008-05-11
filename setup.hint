@@ -1,4 +1,4 @@
-category: Text
+category: Graphics
 requires: cygwin libdjvulibre15 libtiff5
 sdesc: "DjVu document package (utilities)"
 ldesc: "DjVu (pronounced 'deja vu') a set of compression technologies, a

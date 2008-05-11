@@ -1,4 +1,4 @@
-category: Text X11 KDE
+category: Graphics X11 KDE
 requires: cygwin libdjvulibre15 libX11_6 libXext6 libXt6 qt3 xdg-utils
 external-source: djvulibre
 sdesc: "DjVu document package (Qt3 GUI)"

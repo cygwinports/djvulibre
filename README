@@ -5,7 +5,8 @@ format, and a software platform for the delivery over the Web of digital
 documents, scanned documents, and high resolution images.
 
 Runtime requirements:
-  cygwin-1.5.24-2
+  cygwin-1.5.25-11
+  libiconv2-1.11-1
   libjpeg62-6b-12
   libtiff5-3.8.2-3
 
@@ -13,19 +14,18 @@ The djview GUI package also requires:
   libX11_6-1.1.3-1
   libXext6-1.0.3-1
   libXt6-1.0.5-1
-  qt3-3.3.7-4
+  qt3-3.3.8-4
   xdg-utils-1.0.1-1
 
 Build requirements:
 (besides corresponding devel packages)
-  cygwin-1.5.24-2
   autoconf2.5-2.61-1
   binutils-20050817-1
-  cygport-0.3.7-1
-  gawk-3.1.5-4
+  cygport-0.3.10-1
+  gawk-3.1.6-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
-  libtool1.5-1.5.23a-2
+  libtool-2.2.2-2
   make-3.81-1
   sed-4.1.5-2
 
@@ -149,7 +149,7 @@ Files included in the binary packages:
 (djview3)
   /etc/postinstall/djvulibre.sh
   /usr/bin/djview3.exe
-  /usr/lib/netscape/plugins/nsdejavu.dll
+  /usr/lib/mozilla/plugins/nsdejavu.dll
   /usr/share/djvu/djview3/de/djview.qm
   /usr/share/djvu/djview3/de/qt.qm
   /usr/share/djvu/djview3/desktop/djvulibre-djview3.desktop
@@ -172,6 +172,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 3.5.20-2 -----
+Rebuilt.
 
 ----- version 3.5.20-1 -----
 Version bump.

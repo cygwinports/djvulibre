@@ -1,5 +1,5 @@
-category: Text Libs
-requires: cygwin libjpeg-devel
+category: Graphics Libs
+requires: cygwin libdjvulibre15 libiconv libjpeg-devel
 external-source: djvulibre
 sdesc: "DjVu document package (development)"
 ldesc: "DjVu (pronounced 'deja vu') a set of compression technologies, a
