@@ -1,7 +1,0 @@
-category: Graphics X11 KDE
-requires: cygwin libdjvulibre15 libX11_6 libXext6 libXt6 qt3 xdg-utils
-external-source: djvulibre
-sdesc: "DjVu document package (Qt3 GUI)"
-ldesc: "DjVu (pronounced 'deja vu') a set of compression technologies, a
-file format, and a software platform for the delivery over the Web of
-digital documents, scanned documents, and high resolution images."
