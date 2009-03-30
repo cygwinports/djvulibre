@@ -6,9 +6,11 @@ documents, scanned documents, and high resolution images.
 
 Runtime requirements:
   cygwin-1.5.25-15
-  libiconv2-1.11-1
-  libjpeg62-6b-12
-  libtiff5-3.8.2-3
+  libgcc1-4.3.2-2
+  libiconv2-1.12-10
+  libjpeg62-6b-20
+  libstdc++6-4.3.2-2
+  libtiff5-3.8.2-10
   bash
   coreutils
   curl
@@ -17,14 +19,14 @@ Runtime requirements:
 
 Build requirements:
 (besides corresponding devel packages)
-  autoconf2.5-2.61-1
-  binutils-20050817-1
-  cygport-0.3.10-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  gcc-g++-3.4.4-3
-  libtool-2.2.2-2
-  make-3.81-1
+  autoconf2.5-2.63-10
+  binutils-20080624-2
+  cygport-0.9.6-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  gcc4-g++-4.3.2-2
+  libtool-2.2.7a-11
+  make-3.81-2
   sed-4.1.5-2
 
 Canonical homepage:
@@ -95,12 +97,11 @@ Files included in the binary packages:
   /usr/share/djvu/pubtext/DjVuMessages.dtd
   /usr/share/djvu/pubtext/DjVuOCR.dtd
   /usr/share/djvu/pubtext/DjVuXML-s.dtd
-  /usr/share/doc/djvulibre-3.5.21/COPYING
-  /usr/share/doc/djvulibre-3.5.21/COPYRIGHT
-  /usr/share/doc/djvulibre-3.5.21/INSTALL
-  /usr/share/doc/djvulibre-3.5.21/NEWS
-  /usr/share/doc/djvulibre-3.5.21/README
-  /usr/share/doc/djvulibre-3.5.21/TODO
+  /usr/share/doc/djvulibre/COPYING
+  /usr/share/doc/djvulibre/COPYRIGHT
+  /usr/share/doc/djvulibre/NEWS
+  /usr/share/doc/djvulibre/README
+  /usr/share/doc/djvulibre/TODO
   /usr/share/man/ja/man1/bzz.1.gz
   /usr/share/man/ja/man1/c44.1.gz
   /usr/share/man/ja/man1/cjb2.1.gz
@@ -152,24 +153,8 @@ Files included in the binary packages:
 
 Port Notes:
 
------ version 3.5.21-1 -----
-Version bump.
-Disabled building of djview3 in favour of djview4.
-
------ version 3.5.20-2 -----
-Rebuilt.
-
------ version 3.5.20-1 -----
-Version bump.
-
------ version 3.5.19-1 -----
-Version bump.
-
------ version 3.5.18-1 -----
-Version bump.
-
------ version 3.5.17-1 -----
-Initial release for Cygwin.
+----- version 3.5.21-10 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:

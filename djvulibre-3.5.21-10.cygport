@@ -10,23 +10,15 @@ PKG_CONTENTS[0]="--exclude=*.dll usr/bin/ usr/share/"
 PKG_CONTENTS[1]="usr/bin/*-${abi}.dll"
 PKG_CONTENTS[2]='usr/include/ usr/lib/lib* usr/lib/pkgconfig/'
 
+CFLAGS+=" -march=i686"
+
 src_compile() {
 	cd ${S}
 
-	local lt_m4
-	local lt_macros="libtool.m4"
-	local lt_v=$(libtoolize --version | head -n 1 | cut -d ' ' -f 4)
-
-	case ${lt_v} in
-	1.5.*)  ;;
-	2.2.*)  lt_macros+=" ltoptions.m4 ltsugar.m4 ltversion.m4 lt~obsolete.m4" ;;
-	*)  error "unsupported libtool version: ${lt_v}" ;;
-	esac
-
 	rm -f config/libtool.m4
-	for lt_m4 in ${lt_macros}
+	for lt_m4 in libtool.m4 ltoptions.m4 ltsugar.m4 ltversion.m4 lt~obsolete.m4
 	do
-	cat /usr/share/aclocal/${lt_m4} >> config/libtool.m4
+		cat /usr/share/aclocal/${lt_m4} >> config/libtool.m4
 	done
 
 	cygautoreconf
