@@ -1,5 +1,5 @@
 category: Graphics
-requires: cygwin libdjvulibre21 libgcc1 libstdc++6 libtiff5 bash coreutils curl grep wget
+requires: libdjvulibre21 libgcc1 libstdc++6 libtiff5 bash coreutils curl grep wget
 sdesc: "DjVu document package (utilities)"
 ldesc: "DjVu (pronounced 'deja vu') a set of compression technologies, a
 file format, and a software platform for the delivery over the Web of
