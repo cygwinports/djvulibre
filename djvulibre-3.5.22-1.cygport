@@ -1,16 +1,12 @@
 DESCRIPTION="DjVu document library, viewer, and browser plugin"
 HOMEPAGE="http://djvulibre.djvuzone.org/"
 SRC_URI="mirror://sourceforge/djvu/${P}.tar.gz"
-PATCH_URI="3.5.21-setmode.patch"
+PATCH_URI="3.5.22-setmode.patch"
 
-abi=21
-PKG_NAMES="${PN} lib${PN}${abi} lib${PN}-devel"
-PKG_HINTS="setup runtime devel"
-PKG_CONTENTS[0]="--exclude=*.dll usr/bin/ usr/share/"
-PKG_CONTENTS[1]="usr/bin/*-${abi}.dll"
-PKG_CONTENTS[2]='usr/include/ usr/lib/lib* usr/lib/pkgconfig/'
-
-CFLAGS+=" -march=i686"
+PKG_NAMES="${PN} lib${PN}21 lib${PN}-devel"
+djvulibre_CONTENTS="--exclude=*.dll usr/bin/ usr/share/"
+libdjvulibre21_CONTENTS="usr/bin/*-21.dll"
+libdjvulibre_devel_CONTENTS='usr/include/ usr/lib/lib* usr/lib/pkgconfig/'
 
 src_compile() {
 	cd ${S}
@@ -29,6 +25,7 @@ src_compile() {
 		--with-jpeg \
 		--with-tiff \
 		--disable-djview --without-qt \
-		--enable-threads=pthread
+		--enable-threads=pthread \
+		LIBS=-liconv
 	cygmake
 }

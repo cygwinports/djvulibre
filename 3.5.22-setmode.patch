@@ -1,0 +1,14 @@
+--- origsrc/djvulibre-3.5.22/tools/ddjvu.cpp	2009-02-13 03:46:27.000000000 -0600
++++ src/djvulibre-3.5.22/tools/ddjvu.cpp	2010-02-12 00:40:29.935263000 -0600
+@@ -81,8 +81,10 @@
+ #include "libdjvu/ddjvuapi.h"
+ #include "tiff2pdf.h"
+ 
+-#if defined(WIN32) && !defined(__CYGWIN32__)
++#if defined(WIN32) || defined(__CYGWIN32__)
+ # include <io.h>
++#endif
++#if defined(WIN32)
+ # define dup     _dup
+ # define lseek   _lseek
+ # define open    _open
