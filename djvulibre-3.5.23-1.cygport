@@ -1,22 +1,18 @@
 DESCRIPTION="DjVu document library, viewer, and browser plugin"
 HOMEPAGE="http://djvulibre.djvuzone.org/"
 SRC_URI="mirror://sourceforge/djvu/${P}.tar.gz"
-PATCH_URI="3.5.22-setmode.patch"
+PATCH_URI="3.5.23-setmode.patch"
 
 PKG_NAMES="${PN} lib${PN}21 lib${PN}-devel"
 djvulibre_CONTENTS="--exclude=*.dll usr/bin/ usr/share/"
 libdjvulibre21_CONTENTS="usr/bin/*-21.dll"
 libdjvulibre_devel_CONTENTS='usr/include/ usr/lib/lib* usr/lib/pkgconfig/'
 
+DISTCLEANFILES="aclocal.m4 config/l*.m4"
+ACLOCAL_FLAGS="-I config"
+
 src_compile() {
 	cd ${S}
-
-	rm -f config/libtool.m4
-	for lt_m4 in libtool.m4 ltoptions.m4 ltsugar.m4 ltversion.m4 lt~obsolete.m4
-	do
-		cat /usr/share/aclocal/${lt_m4} >> config/libtool.m4
-	done
-
 	cygautoreconf
 
 	cd ${B}
