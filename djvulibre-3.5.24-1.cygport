@@ -1,5 +1,5 @@
 DESCRIPTION="DjVu document library, viewer, and browser plugin"
-HOMEPAGE="http://djvulibre.djvuzone.org/"
+HOMEPAGE="http://djvu.sourceforge.net/"
 SRC_URI="mirror://sourceforge/djvu/${P}.tar.gz"
 PATCH_URI="3.5.23-setmode.patch"
 
