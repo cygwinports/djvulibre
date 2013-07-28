@@ -1,14 +1,17 @@
+NAME="djvulibre"
+VERSION=3.5.25.3
+RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="DjVu document format"
 DESCRIPTION="DjVu is a set of compression technologies, a file format, and a
 software platform for the delivery over the Web of digital documents, scanned
 documents, and high resolution images."
 HOMEPAGE="http://djvu.sourceforge.net/"
-SRC_URI="mirror://sourceforge/djvu/${P}.tar.gz"
-SRC_DIR=${P%.${PV[4]}}
+SRC_URI="mirror://sourceforge/djvu/${NAME}-${VERSION}.tar.gz"
+SRC_DIR="${NAME}-${VERSION%.*}"
 PATCH_URI="3.5.23-setmode.patch"
 
-PKG_NAMES="${PN} lib${PN}21 lib${PN}-devel"
+PKG_NAMES="${NAME} lib${NAME}21 lib${NAME}-devel"
 djvulibre_REQUIRES="curl wget"
 djvulibre_CONTENTS="--exclude=*.dll etc/ usr/bin/ usr/share/"
 libdjvulibre21_CONTENTS="usr/bin/*-21.dll"
