@@ -10,6 +10,7 @@ HOMEPAGE="http://djvu.sourceforge.net/"
 SRC_URI="mirror://sourceforge/djvu/${NAME}-${VERSION}.tar.gz"
 SRC_DIR="${NAME}-${VERSION%.*}"
 PATCH_URI="3.5.23-setmode.patch"
+PATCH_URI+=" 3.5.25-debuginfo.patch"
 
 PKG_NAMES="${NAME} lib${NAME}21 lib${NAME}-devel"
 djvulibre_REQUIRES="curl wget"
