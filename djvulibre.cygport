@@ -1,6 +1,6 @@
 NAME="djvulibre"
 VERSION=3.5.25.3
-RELEASE=1
+RELEASE=2
 CATEGORY="Graphics"
 SUMMARY="DjVu document format utilities"
 DESCRIPTION="DjVu is a set of compression technologies, a file format, and a
