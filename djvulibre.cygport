@@ -1,6 +1,6 @@
 NAME="djvulibre"
-VERSION=3.5.25.3
-RELEASE=2
+VERSION=3.5.27
+RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="DjVu document format utilities"
 DESCRIPTION="DjVu is a set of compression technologies, a file format, and a
@@ -8,22 +8,32 @@ software platform for the delivery over the Web of digital documents, scanned
 documents, and high resolution images."
 HOMEPAGE="http://djvu.sourceforge.net/"
 SRC_URI="mirror://sourceforge/djvu/${NAME}-${VERSION}.tar.gz"
-SRC_DIR="${NAME}-${VERSION%.*}"
-PATCH_URI="3.5.23-setmode.patch"
-PATCH_URI+=" 3.5.25-debuginfo.patch"
+SRC_DIR="${NAME}-${VERSION}"
 
-PKG_NAMES="${NAME} lib${NAME}21 lib${NAME}-devel"
+PKG_NAMES="${NAME} lib${NAME}21 lib${NAME}-common lib${NAME}-devel"
 djvulibre_REQUIRES="curl wget"
-djvulibre_CONTENTS="--exclude=*.dll etc/ usr/bin/ usr/share/"
+djvulibre_CONTENTS="--exclude=*.dll usr/bin/ usr/share/man/man1/"
 libdjvulibre21_CATEGORY="Libs"
 libdjvulibre21_SUMMARY="${SUMMARY% *} library"
+libdjvulibre21_REQUIRES="lib${NAME}-common"
 libdjvulibre21_CONTENTS="usr/bin/*-21.dll"
+libdjvulibre_common_CATEGORY="Libs"
+libdjvulibre_common_SUMMARY="${SUMMARY% *} library (runtime data)"
+libdjvulibre_common_CONTENTS="
+	etc/postinstall/
+	usr/share/djvu/
+	usr/share/doc/
+	usr/share/icons/
+	usr/share/mime/
+"
 libdjvulibre_devel_CATEGORY="Libs"
 libdjvulibre_devel_SUMMARY="${SUMMARY% *} library"
 libdjvulibre_devel_CONTENTS='usr/include/ usr/lib/lib* usr/lib/pkgconfig/'
 
 DISTCLEANFILES="aclocal.m4 config/l*.m4"
 ACLOCAL_FLAGS="-I config"
+# obsolete but used in too many places to bother patching
+CXXFLAGS+=" -D__CYGWIN32__=1"
 
 src_compile() {
 	cd ${S}
@@ -34,8 +44,6 @@ src_compile() {
 		--enable-xmltools \
 		--with-jpeg \
 		--with-tiff \
-		--disable-djview --without-qt \
-		--enable-threads=pthread \
 		LIBS=-liconv
 	cygmake
 }
@@ -45,15 +53,6 @@ src_install() {
 	cyginstall
 	# requires undistributable gsdjvu
 	rm -f ${D}/usr/bin/djvudigital ${D}/usr/share/man/man1/djvudigital.*
-
-	pushd desktopfiles
-	for i in 16 22 24 32 48 64 72 96 128 256
-	do
-		insinto /usr/share/icons/hicolor/${i}x${i}/mimetypes
-		newins hi${i}-djvu.png image-vnd.djvu.png
-	done
-	insinto /usr/share/icons/hicolor/scalable/mimetypes
-	newins hi-djvu.svgz image-vnd.djvu.svgz
 
 	rm -fr ${D}/usr/share/djvu/osi/desktop
 }
